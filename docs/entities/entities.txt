@@ -1,0 +1,28 @@
+@startuml
+entity Director {
+  * id
+  --
+  * givenName
+  * familyName
+}
+
+entity Movie {
+  * id
+  --
+  * title
+  * director
+  * rating[]
+}
+
+entity Rating {
+  * id
+  --
+  * reviewerName
+  * score
+  * movie
+}
+
+
+Director ||--o{ Movie
+Movie ||--o{ Rating
+@enduml
