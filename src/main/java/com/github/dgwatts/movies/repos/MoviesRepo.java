@@ -11,6 +11,7 @@ import com.github.dgwatts.movies.model.Movie;
 @Repository
 public interface MoviesRepo extends CrudRepository<Movie, Integer> {
 
+	@Query("SELECT m from Movie m JOIN m.ratings r WHERE r.rating > ?1")
 	List<Movie> findAllByRatingGreaterThan(int rating);
 
 	List<Movie> findAllByDirectorId(int directorId);
