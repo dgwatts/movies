@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.dgwatts.movies.services.DirectorsService;
 import com.github.dgwatts.movies.model.Director;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value="directors",  description="Operations for Directors")
 public class DirectorsController {
 
 	private final DirectorsService directorsService;
@@ -26,26 +30,31 @@ public class DirectorsController {
 	}
 
 	@PostMapping(value = "/directors", consumes = "application/json")
+	@ApiOperation(value = "Create a new director", response = Director.class)
 	public ResponseEntity<Director> create(@RequestBody Director director) {
 		return new ResponseEntity<>(directorsService.create(director), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/directors/{id}")
+	@ApiOperation(value = "Retrieve a director", response = Director.class)
 	public ResponseEntity<Director> getOne(@PathVariable int id) {
 		return new ResponseEntity<>(directorsService.getOne(id), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/directors")
+	@ApiOperation(value = "Retrieve all directors", response = List.class)
 	public ResponseEntity<List<Director>> getAll() {
 		return new ResponseEntity<>(directorsService.getAll(), HttpStatus.OK);
 	}
 
 	@PutMapping(value = "/directors", consumes = "application/json")
+	@ApiOperation(value = "Update a director", response = Director.class)
 	public ResponseEntity<Director> update(@RequestBody Director director) {
 		return new ResponseEntity<>(directorsService.update(director), HttpStatus.OK);
 	}
 
 	@DeleteMapping(value = "/directors/{id}")
+	@ApiOperation(value = "Delete a Director")
 	public void delete(@PathVariable int id) {
 		directorsService.delete(id);
 	}
