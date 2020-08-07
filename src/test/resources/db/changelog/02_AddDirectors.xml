@@ -1,0 +1,71 @@
+<databaseChangeLog
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+				http://www.liquibase.org/xml/ns/dbchangelog
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="01_AddDirectors_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<tableExists schemaName="movies" tableName="directors" />
+		</preConditions>
+
+		<insert schemaName="movies" tableName="directors">
+			<column name="given_name" value="Jan" />
+			<column name="family_name" value="Rukavina" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Georgine" />
+			<column name="family_name" value="Brown" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Carmen" />
+			<column name="family_name" value="Cowan" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Jon" />
+			<column name="family_name" value="Green" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Antonio" />
+			<column name="family_name" value="Espinosa" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Vera" />
+			<column name="family_name" value="Ross" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Lucien" />
+			<column name="family_name" value="Fast" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Dvorak" />
+			<column name="family_name" value="Addams" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Muhammad" />
+			<column name="family_name" value="Barker" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="LeDuy" />
+			<column name="family_name" value="Phan" />
+		</insert>
+
+		<insert schemaName="Movies" tableName="Directors">
+			<column name="given_name" value="Steve" />
+			<column name="family_name" value="Bennett" />
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

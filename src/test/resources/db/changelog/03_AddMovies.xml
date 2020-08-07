@@ -1,0 +1,77 @@
+<databaseChangeLog
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+				http://www.liquibase.org/xml/ns/dbchangelog
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="01_Addmovies_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="movies" />
+		</preConditions>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Frozen Mists" />
+			<column name="director_id" valueNumeric="1" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="The Hidden Dreamer" />
+			<column name="director_id" valueNumeric="2" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Snow of Witch" />
+			<column name="director_id" valueNumeric="3" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="The Stars's Flame" />
+			<column name="director_id" valueNumeric="4" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="The Lover of the Search" />
+			<column name="director_id" valueNumeric="5" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Worlds in the Lake" />
+			<column name="director_id" valueNumeric="6" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Splintered Way" />
+			<column name="director_id" valueNumeric="7" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="The Absent Shores" />
+			<column name="director_id" valueNumeric="8" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="In The Morning" />
+			<column name="director_id" valueNumeric="9" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Girl of Death" />
+			<column name="director_id" valueNumeric="10" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="The Boyfriend of the Streams" />
+			<column name="director_id" valueNumeric="1" />
+		</insert>
+
+		<insert schemaName="movies" tableName="movies">
+			<column name="title" value="Wings in the Search" />
+			<column name="director_id" valueNumeric="2" />
+		</insert>
+
+	</changeSet>
+
+</databaseChangeLog>

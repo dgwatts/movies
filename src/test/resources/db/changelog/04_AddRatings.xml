@@ -1,0 +1,89 @@
+<databaseChangeLog
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+				http://www.liquibase.org/xml/ns/dbchangelog
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="01_Addmovies_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<tableExists tableName="ratings" />
+		</preConditions>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Constant Millet" />
+			<column name="rating" valueNumeric="8" />
+			<column name="movie_id" valueNumeric="1" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Yasmine Perez" />
+			<column name="rating" valueNumeric="93" />
+			<column name="movie_id" valueNumeric="2" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Abigail Farley" />
+			<column name="rating" valueNumeric="53" />
+			<column name="movie_id" valueNumeric="3" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Fletcher Carver" />
+			<column name="rating" valueNumeric="21" />
+			<column name="movie_id" valueNumeric="4" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Felix King" />
+			<column name="rating" valueNumeric="87" />
+			<column name="movie_id" valueNumeric="5" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Neville Lawson" />
+			<column name="rating" valueNumeric="89" />
+			<column name="movie_id" valueNumeric="6" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Jerry Carlson" />
+			<column name="rating" valueNumeric="96" />
+			<column name="movie_id" valueNumeric="7" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Asher Wells" />
+			<column name="rating" valueNumeric="18" />
+			<column name="movie_id" valueNumeric="8" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="John Curry" />
+			<column name="rating" valueNumeric="33" />
+			<column name="movie_id" valueNumeric="9" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Major Major" />
+			<column name="rating" valueNumeric="64" />
+			<column name="movie_id" valueNumeric="9" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Christen Schultz" />
+			<column name="rating" valueNumeric="87" />
+			<column name="movie_id" valueNumeric="8" />
+		</insert>
+
+		<insert schemaName="movies" tableName="ratings">
+			<column name="reviewer_name" value="Violet Stein" />
+			<column name="rating" valueNumeric="18" />
+			<column name="movie_id" valueNumeric="7" />
+		</insert>
+
+	</changeSet>
+
+</databaseChangeLog>
