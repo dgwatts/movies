@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.dgwatts.movies.dto.RatingDto;
 import com.github.dgwatts.movies.model.Rating;
 import com.github.dgwatts.movies.services.RatingsService;
 
