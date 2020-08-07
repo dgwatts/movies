@@ -1,4 +1,7 @@
 package com.github.dgwatts.movies.services;
 
-public interface DirectorsService {
+import com.github.dgwatts.movies.model.Director;
+import com.github.dgwatts.movies.services.impl.CrudService;
+
+public interface DirectorsService extends CrudService<Director> {
 }
