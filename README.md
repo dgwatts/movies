@@ -27,7 +27,7 @@ Movie Catalogue
 * Movies have zero or more ratings
   * If a movie has zero or 1 ratings, it could be added as a field of Movie
 * Ratings have a name of the person who rated, a rating (integer 0 - 100), and a movie it applies to
-  * If you wanted to add the concept of a Reviwer, a Reviewer table and MovieReview join table could be added
+  * If you wanted to add the concept of a Reviewer, a Reviewer table and MovieReview join table could be added
 * A director can direct multiple movies
 * Movies and directors can have non-unique names
   * Additional information will be required, to be able to fully distinguish them
