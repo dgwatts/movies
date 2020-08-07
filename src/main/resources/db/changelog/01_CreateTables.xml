@@ -1,0 +1,66 @@
+<databaseChangeLog
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+				http://www.liquibase.org/xml/ns/dbchangelog
+				http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet id="01_CreateTables_Directors_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="directors" />
+			</not>
+		</preConditions>
+		<createTable tableName="directors">
+			<column name="id" type="int(11)" autoIncrement="true"><constraints primaryKey="true" nullable="false"/></column>
+			<column name="given_name" type="VARCHAR(32)"><constraints nullable="false"/></column>
+			<column name="family_name" type="VARCHAR(32)"><constraints nullable="false"/></column>
+		</createTable>
+	</changeSet>
+
+	<changeSet id="01_CreateTables_Movies_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="movies" />
+			</not>
+		</preConditions>
+		<createTable tableName="movies">
+			<column name="id" type="int(11)" autoIncrement="true"><constraints primaryKey="true" nullable="false"/></column>
+			<column name="title" type="VARCHAR(64)"><constraints nullable="false"/></column>
+			<column name="director_id" type="int(11)"><constraints nullable="false"/></column>
+		</createTable>
+		<addForeignKeyConstraint
+				constraintName="fk_movie_director"
+				baseTableName="movies"
+				baseColumnNames="director_id"
+				onDelete="NO ACTION"
+				onUpdate="NO ACTION"
+				referencedTableName="directors"
+				referencedColumnNames="id"/>
+	</changeSet>
+
+	<changeSet id="01_CreateTables_Ratings_01" author="DaveWatts">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="ratings" />
+			</not>
+		</preConditions>
+		<createTable tableName="ratings">
+			<column name="id" type="int(11)" autoIncrement="true"><constraints primaryKey="true" nullable="false"/></column>
+			<column name="reviewer_name" type="VARCHAR(64)"><constraints nullable="false"/></column>
+			<column name="rating" type="int(3)"><constraints nullable="false"/></column>
+			<column name="movie_id" type="int(11)"><constraints nullable="false"/></column>
+		</createTable>
+		<addForeignKeyConstraint
+				constraintName="fk_rating_movie"
+				baseTableName="ratings"
+				baseColumnNames="movie_id"
+				onDelete="NO ACTION"
+				onUpdate="NO ACTION"
+				referencedTableName="movies"
+				referencedColumnNames="id"/>
+	</changeSet>
+
+</databaseChangeLog>
